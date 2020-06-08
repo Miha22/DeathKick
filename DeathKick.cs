@@ -1,8 +1,6 @@
 ﻿using System;
 using Rocket.API.Collections;
-using Rocket.Core.Logging;
 using Rocket.Core.Plugins;
-using Rocket.Unturned;
 using Rocket.Unturned.Chat;
 using Rocket.Unturned.Player;
 using SDG.Unturned;
