@@ -23,6 +23,12 @@ namespace DeathKick
 
         private void UnturnedPlayerEvents_OnPlayerDeath(UnturnedPlayer player, EDeathCause cause, ELimb limb, CSteamID murderer)
         {
+            player.Events.OnRevive += Events_OnRevive;
+        }
+
+        private void Events_OnRevive(UnturnedPlayer player, Vector3 position, byte angle)
+        {
+            player.Events.OnRevive -= Events_OnRevive;
             UnturnedChat.Say(Translate("server_kick_message", player.CharacterName), GetColor(), true);
             Provider.kick(player.CSteamID, Translate("player_kick_message"));
         }
